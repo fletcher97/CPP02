@@ -5,19 +5,26 @@
 int main()
 {
 	Fixed a;
-	Fixed b (a);
-	Fixed c;
+	Fixed const b ( 10 );
+	Fixed const c ( 42.42f );
+	Fixed const d ( b );
 
-	c = b;
+	a = Fixed( 1234.4321f );
 
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
-	std::cout << n << std::endl;
-	Fixed d(n);
+	std::cout << "A is: " << a << std::endl;
+	std::cout << "B is: " << b << std::endl;
+	std::cout << "C is: " << c << std::endl;
+	std::cout << "D is: " << d << std::endl;
 
-	std::cout << (static_cast<float>(d.getRawBits()) / (1 << 8)) << std::endl;
-	std::cout << n << std::endl;
+	std::cout << "A is: " << a.toInt() << " as int." << std::endl;
+	std::cout << "B is: " << b.toInt() << " as int." << std::endl;
+	std::cout << "C is: " << c.toInt() << " as int." << std::endl;
+	std::cout << "D is: " << d.toInt() << " as int." << std::endl;
+
+	std::cout << "A is: " << a.toFloat() << " as float." << std::endl;
+	std::cout << "B is: " << b.toFloat() << " as float." << std::endl;
+	std::cout << "C is: " << c.toFloat() << " as float." << std::endl;
+	std::cout << "D is: " << d.toFloat() << " as float." << std::endl;
 
 	return 0;
 }

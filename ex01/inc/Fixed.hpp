@@ -1,3 +1,5 @@
+#include <iostream>
+
 class Fixed
 {
 private:
@@ -13,4 +15,8 @@ public:
 
 	int getRawBits() const;
 	void setRawBits(int const  raw);
+
+	float toFloat() const;
+	int toInt() const;
 };
+std::ostream& operator<<(std::ostream& out, const Fixed& fixed);
