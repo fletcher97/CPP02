@@ -37,7 +37,7 @@
 ################################################################################
 
 # Name of a single binary. Add as many variables as required by the project
-NAME1 := Moar_Brainz
+NAME1 := main
 
 # The names of all the binaries. Add aditional variables created above separated
 # by space.
@@ -99,7 +99,7 @@ ifeq (${PEDANTIC},true)
 	CFLAGS += -Wcast-qual -Wdisabled-optimization -Wformat=2 -Wuninitialized
 	CFLAGS += -Winit-self -Wmissing-include-dirs -Wredundant-decls -Wshadow
 	CFLAGS += -Wstrict-overflow=5 -Wundef -fdiagnostics-show-option
-	CFLAGS += -fstack-protector-all -fstack-clash-protection
+	CFLAGS += -fstack-protector-all
 	ifeq (${CC},gcc)
 		CFLAGS += -Wformat-signedness -Wformat-truncation=2 -Wformat-overflow=2
 		CFLAGS += -Wlogical-op -Wstringop-overflow=4
